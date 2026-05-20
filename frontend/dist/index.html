@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/fastapi-loader/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AxxioLab</title>
+    <script>
+      // Recupera rota após redirect do 404.html (GitHub Pages SPA)
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded[0] +
+            (decoded[1] ? '?' + decoded[1] : '') + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+    <script type="module" crossorigin src="/fastapi-loader/assets/index-Bc3oQ7lP.js"></script>
+    <link rel="stylesheet" crossorigin href="/fastapi-loader/assets/index-Cy0bQu6j.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
