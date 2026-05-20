@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { supabase } from '../lib/supabase';
+import { useAuth } from '../auth/AuthContext';
 import type { Database } from '../types/database';
 
 // ============================================
@@ -20,9 +21,12 @@ interface Registro {
   pan: string;
   expiry_date: string;
   tran_amount: number;
+  brl_amount: number;
   tran_currency: string;
   currency: string;
   merchant_name: string;
+  token: string;
+  nr_parcelas: number;
   user_auditoria: string;
 }
 
@@ -36,6 +40,7 @@ interface Toast {
 // COMPONENTE PRINCIPAL
 // ============================================
 export default function GerarMainframe() {
+  const { userCode, user } = useAuth();
   const [templates, setTemplates] = useState<Template[]>([]);
   const [carregando, setCarregando] = useState(true);
   const [registros, setRegistros] = useState<Registro[]>([]);
@@ -59,10 +64,12 @@ export default function GerarMainframe() {
     pan: '',
     expiry_date: '',
     tran_amount: '',
+    brl_amount: '',
     tran_currency: '986',
     currency: '986',
     merchant_name: '',
-    user_auditoria: 'CLRGUSR',
+    token: '',
+    nr_parcelas: '',
   });
   const [errosForm, setErrosForm] = useState<{[key: string]: string}>({});
 
@@ -126,13 +133,13 @@ export default function GerarMainframe() {
   // FORMULÁRIO INLINE
   // ============================================
   const estaEditando = editandoId !== null || incluindo;
-  const podeSalvar = form.pan && form.expiry_date && form.tran_amount && form.merchant_name;
+  const podeSalvar = form.pan && form.expiry_date && form.tran_amount && form.brl_amount && form.merchant_name;
   const resetForm = useCallback(() => {
     setForm({
       template_id: filtroTemplate || (templatesFiltradosPorBandeira[0]?.id ?? ''),
-      pan: '', expiry_date: '', tran_amount: '',
+      pan: '', expiry_date: '', tran_amount: '', brl_amount: '',
       tran_currency: '986', currency: '986',
-      merchant_name: '', user_auditoria: 'CLRGUSR',
+      merchant_name: '', token: '', nr_parcelas: '',
     });
     setEditandoId(null);
     setIncluindo(false);
@@ -165,10 +172,12 @@ export default function GerarMainframe() {
       pan: reg.pan,
       expiry_date: reg.expiry_date,
       tran_amount: reg.tran_amount.toString(),
+      brl_amount: reg.brl_amount.toString(),
       tran_currency: reg.tran_currency,
       currency: reg.currency,
       merchant_name: reg.merchant_name,
-      user_auditoria: reg.user_auditoria,
+      token: reg.token || '',
+      nr_parcelas: reg.nr_parcelas ? reg.nr_parcelas.toString() : '',
     });
     setIncluindo(false);
     setTimeout(() => {
@@ -207,10 +216,13 @@ export default function GerarMainframe() {
       pan: form.pan,
       expiry_date: form.expiry_date,
       tran_amount: parseFloat(form.tran_amount),
+      brl_amount: parseFloat(form.brl_amount) || parseFloat(form.tran_amount),
       tran_currency: form.tran_currency,
       currency: form.currency,
       merchant_name: form.merchant_name.toUpperCase(),
-      user_auditoria: form.user_auditoria,
+      token: form.token.padStart(19, '0'),
+      nr_parcelas: parseInt(form.nr_parcelas) || 0,
+      user_auditoria: userCode ?? user?.email ?? 'CLRGUSR',
     };
 
     if (incluindo) {
@@ -285,7 +297,7 @@ export default function GerarMainframe() {
           nome_arquivo: nomeArquivo.trim(),
           bandeira: templateSelecionado.bandeira,
           template_id: filtroTemplate,
-          usuario: 'CLRGUSR',
+          usuario: user?.email ?? 'CLRGUSR',
         })
         .select()
         .single();
@@ -294,6 +306,11 @@ export default function GerarMainframe() {
         throw new Error(arquivoError?.message || 'Erro ao criar arquivo');
       }
 
+      const now = new Date();
+      const p2 = (n: number) => String(n).padStart(2, '0');
+      const dataTransacao = p2(now.getDate()) + p2(now.getMonth() + 1) + String(now.getFullYear());
+      const horaTransacao = p2(now.getHours()) + p2(now.getMinutes()) + p2(now.getSeconds());
+
       const registrosInsert = registros.map((reg, idx) => ({
         arquivo_id: arquivoData.id,
         siaidcd: reg.siaidcd,
@@ -301,9 +318,14 @@ export default function GerarMainframe() {
         pan: reg.pan,
         expiry_date: reg.expiry_date,
         tran_amount: reg.tran_amount,
+        brl_amount: reg.brl_amount,
         tran_currency: reg.tran_currency,
         currency: reg.currency,
         merchant_name: reg.merchant_name,
+        token: reg.token,
+        nr_parcelas: reg.nr_parcelas,
+        data_transacao: dataTransacao,
+        hora_transacao: horaTransacao,
         user_auditoria: reg.user_auditoria,
         ordem: idx + 1,
       }));
@@ -470,20 +492,23 @@ export default function GerarMainframe() {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-[#3C2E26] text-white h-10">
-                <th className="text-left px-4 text-xs font-semibold uppercase tracking-wider w-[22%]">Template</th>
-                <th className="text-left px-4 text-xs font-semibold uppercase tracking-wider w-[20%]">PAN</th>
-                <th className="text-left px-4 text-xs font-semibold uppercase tracking-wider w-14">Val</th>
-                <th className="text-right px-4 text-xs font-semibold uppercase tracking-wider w-24">Tran Amount</th>
-                <th className="text-center px-4 text-xs font-semibold uppercase tracking-wider w-14">Tran CCY</th>
-                <th className="text-center px-4 text-xs font-semibold uppercase tracking-wider w-12">CCY</th>
-                <th className="text-left px-4 text-xs font-semibold uppercase tracking-wider w-[18%]">Merchant</th>
-                <th className="text-center px-4 text-xs font-semibold uppercase tracking-wider w-24"></th>
+                <th className="text-left px-3 text-xs font-semibold uppercase tracking-wider w-[16%]">Template</th>
+                <th className="text-left px-3 text-xs font-semibold uppercase tracking-wider w-[15%]">PAN</th>
+                <th className="text-left px-3 text-xs font-semibold uppercase tracking-wider w-12">Val</th>
+                <th className="text-right px-3 text-xs font-semibold uppercase tracking-wider w-24">Tran Amt</th>
+                <th className="text-right px-3 text-xs font-semibold uppercase tracking-wider w-24">BRL Amt</th>
+                <th className="text-center px-3 text-xs font-semibold uppercase tracking-wider w-12">T.CCY</th>
+                <th className="text-center px-3 text-xs font-semibold uppercase tracking-wider w-10">CCY</th>
+                <th className="text-left px-3 text-xs font-semibold uppercase tracking-wider w-[13%]">Merchant</th>
+                <th className="text-left px-3 text-xs font-semibold uppercase tracking-wider w-36">Token</th>
+                <th className="text-center px-3 text-xs font-semibold uppercase tracking-wider w-14">Parc</th>
+                <th className="text-center px-3 text-xs font-semibold uppercase tracking-wider w-20"></th>
               </tr>
             </thead>
             <tbody>
               {(incluindo || editandoId !== null) && (
                 <tr className="border-b border-[#EDE8E2] bg-[#FDF8F3] h-10" onKeyDown={handleKeyDownForm}>
-                  <td className="px-4 py-2">
+                  <td className="px-2 py-1">
                     <select
                       value={form.template_id}
                       onChange={(e) => setForm({...form, template_id: e.target.value})}
@@ -496,9 +521,8 @@ export default function GerarMainframe() {
                         <option key={t.id} value={t.id}>{t.nome}</option>
                       ))}
                     </select>
-                    {errosForm.template_id && <span className="text-xs text-[#EF4444] block mt-1">{errosForm.template_id}</span>}
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-2 py-1">
                     <input
                       data-form-input="pan"
                       value={form.pan}
@@ -508,9 +532,8 @@ export default function GerarMainframe() {
                       className={`w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border rounded outline-none font-mono focus:border-[#C4A484] ${errosForm.pan ? 'border-[#EF4444]' : 'border-[#D4D4CE]'}`}
                       autoFocus
                     />
-                    {errosForm.pan && <span className="text-xs text-[#EF4444] block mt-1">{errosForm.pan}</span>}
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-2 py-1">
                     <input
                       value={form.expiry_date}
                       onChange={(e) => setForm({...form, expiry_date: e.target.value.replace(/\D/g, '').slice(0,4)})}
@@ -518,57 +541,78 @@ export default function GerarMainframe() {
                       placeholder="MMYY"
                       className={`w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border rounded outline-none font-mono focus:border-[#C4A484] ${errosForm.expiry_date ? 'border-[#EF4444]' : 'border-[#D4D4CE]'}`}
                     />
-                    {errosForm.expiry_date && <span className="text-xs text-[#EF4444] block mt-1">{errosForm.expiry_date}</span>}
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-2 py-1">
                     <input
-                      type="number"
-                      step="0.01"
+                      type="number" step="0.01"
                       value={form.tran_amount}
-                      onChange={(e) => setForm({...form, tran_amount: e.target.value})}
+                      onChange={(e) => {
+                        const v = e.target.value;
+                        setForm(prev => ({ ...prev, tran_amount: v, brl_amount: prev.brl_amount === prev.tran_amount ? v : prev.brl_amount }));
+                      }}
                       placeholder="0.00"
-                      className={`w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border rounded outline-none text-right focus:border-[#C4A484] ${errosForm.tran_amount ? 'border-[#EF4444]' : 'border-[#D4D4CE]'}`}
+                      className={`w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border rounded outline-none text-right font-mono focus:border-[#C4A484] ${errosForm.tran_amount ? 'border-[#EF4444]' : 'border-[#D4D4CE]'}`}
                     />
-                    {errosForm.tran_amount && <span className="text-xs text-[#EF4444] block mt-1">{errosForm.tran_amount}</span>}
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-2 py-1">
+                    <input
+                      type="number" step="0.01"
+                      value={form.brl_amount}
+                      onChange={(e) => setForm({...form, brl_amount: e.target.value})}
+                      placeholder="0.00"
+                      className={`w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border rounded outline-none text-right font-mono focus:border-[#C4A484] ${errosForm.brl_amount ? 'border-[#EF4444]' : 'border-[#D4D4CE]'}`}
+                    />
+                  </td>
+                  <td className="px-2 py-1">
                     <input
                       value={form.tran_currency}
                       onChange={(e) => setForm({...form, tran_currency: e.target.value.replace(/\D/g, '').slice(0,3)})}
-                      maxLength={3}
-                      placeholder="986"
+                      maxLength={3} placeholder="986"
                       className="w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-center font-mono focus:border-[#C4A484]"
                     />
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-2 py-1">
                     <input
                       value={form.currency}
                       onChange={(e) => setForm({...form, currency: e.target.value.replace(/\D/g, '').slice(0,3)})}
-                      maxLength={3}
-                      placeholder="986"
+                      maxLength={3} placeholder="986"
                       className="w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-center font-mono focus:border-[#C4A484]"
                     />
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-2 py-1">
                     <input
                       value={form.merchant_name}
                       onChange={(e) => setForm({...form, merchant_name: e.target.value.toUpperCase()})}
-                      maxLength={50}
-                      placeholder="MERCHANT"
+                      maxLength={50} placeholder="MERCHANT"
                       className={`w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border rounded outline-none uppercase focus:border-[#C4A484] ${errosForm.merchant_name ? 'border-[#EF4444]' : 'border-[#D4D4CE]'}`}
                     />
-                    {errosForm.merchant_name && <span className="text-xs text-[#EF4444] block mt-1">{errosForm.merchant_name}</span>}
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-2 py-1">
+                    <input
+                      value={form.token}
+                      onChange={(e) => setForm({...form, token: e.target.value.replace(/\D/g, '').slice(0,19)})}
+                      maxLength={19} placeholder="0000000000000000000"
+                      className="w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none font-mono focus:border-[#C4A484]"
+                    />
+                  </td>
+                  <td className="px-2 py-1">
+                    <input
+                      value={form.nr_parcelas}
+                      onChange={(e) => setForm({...form, nr_parcelas: e.target.value.replace(/\D/g, '').slice(0,2)})}
+                      maxLength={2} placeholder="00"
+                      className="w-full h-8 px-2 text-xs text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-center font-mono focus:border-[#C4A484]"
+                    />
+                  </td>
+                  <td className="px-2 py-1">
                     <div className="flex items-center justify-center gap-1.5">
                       <button onClick={handleSalvar} disabled={!podeSalvar}
                         className="inline-flex items-center justify-center w-6 h-6 rounded text-[#059669] hover:bg-[#D1FAE5] transition-all disabled:opacity-40"
-                        title="Confirmar" aria-label="Salvar">
+                        title="Confirmar">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
                       </button>
                       <button onClick={handleCancelar}
                         className="inline-flex items-center justify-center w-6 h-6 rounded text-[#999999] hover:text-[#DC2626] hover:bg-[#FEE2E2] transition-all"
-                        title="Cancelar" aria-label="Cancelar">
+                        title="Cancelar">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                       </button>
                     </div>
@@ -593,30 +637,35 @@ export default function GerarMainframe() {
                 const template = templates.find(t => t.id === reg.template_id);
                 return (
                   <tr key={reg.id} className="border-b border-[#EDE8E2] hover:bg-[#FDF8F3] transition-colors h-10">
-                    <td className="px-4 text-[#C4A484] text-xs font-medium truncate max-w-[200px]" title={template?.nome || '-'}>{template?.nome || '-'}</td>
-                    <td className="px-4 font-mono text-[#6B5744] text-xs truncate max-w-[180px]">{reg.pan}</td>
-                    <td className="px-4 font-mono text-[#6B5744] text-xs">{reg.expiry_date}</td>
-                    <td className="px-4 text-right font-mono text-[#1A1A1A] text-xs">
+                    <td className="px-3 text-[#C4A484] text-xs font-medium truncate max-w-[180px]" title={template?.nome || '-'}>{template?.nome || '-'}</td>
+                    <td className="px-3 font-mono text-[#6B5744] text-xs truncate max-w-[160px]">{reg.pan}</td>
+                    <td className="px-3 font-mono text-[#6B5744] text-xs">{reg.expiry_date}</td>
+                    <td className="px-3 text-right font-mono text-[#1A1A1A] text-xs">
                       {reg.tran_amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                     </td>
-                    <td className="px-4 text-center font-mono text-[#6B5744] text-xs">{reg.tran_currency}</td>
-                    <td className="px-4 text-center font-mono text-[#6B5744] text-xs">{reg.currency}</td>
-                    <td className="px-4 text-[#999999] text-xs truncate max-w-[150px]" title={reg.merchant_name}>{reg.merchant_name}</td>
-                    <td className="px-4">
+                    <td className="px-3 text-right font-mono text-[#1A1A1A] text-xs">
+                      {reg.brl_amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                    </td>
+                    <td className="px-3 text-center font-mono text-[#6B5744] text-xs">{reg.tran_currency}</td>
+                    <td className="px-3 text-center font-mono text-[#6B5744] text-xs">{reg.currency}</td>
+                    <td className="px-3 text-[#999999] text-xs truncate max-w-[130px]" title={reg.merchant_name}>{reg.merchant_name}</td>
+                    <td className="px-3 font-mono text-[#6B5744] text-xs truncate max-w-[140px]" title={reg.token}>{reg.token || '—'}</td>
+                    <td className="px-3 text-center font-mono text-[#6B5744] text-xs">{reg.nr_parcelas || '—'}</td>
+                    <td className="px-3">
                       <div className="flex items-center justify-center gap-1.5">
                         <button onClick={() => handleEditar(reg)} disabled={estaEditando}
                           className="inline-flex items-center justify-center w-6 h-6 rounded text-[#999999] hover:text-[#C4A484] hover:bg-[#FDF8F3] transition-all disabled:opacity-30"
-                          title="Editar" aria-label="Editar">
+                          title="Editar">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                         </button>
                         <button onClick={() => handleDuplicar(reg)}
                           className="inline-flex items-center justify-center w-6 h-6 rounded text-[#999999] hover:text-[#3B82F6] hover:bg-[#DBEAFE] transition-all"
-                          title="Duplicar" aria-label="Duplicar">
+                          title="Duplicar">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                         </button>
                         <button onClick={() => handleExcluir(reg.id)}
                           className="inline-flex items-center justify-center w-6 h-6 rounded text-[#999999] hover:text-[#DC2626] hover:bg-[#FEE2E2] transition-all"
-                          title="Excluir" aria-label="Excluir">
+                          title="Excluir">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
                         </button>
                       </div>

@@ -26,9 +26,14 @@ interface RegistroArquivo {
   pan: string;
   expiry_date: string;
   tran_amount: number;
+  brl_amount: number;
   tran_currency: string;
   currency: string;
   merchant_name: string;
+  token: string;
+  nr_parcelas: number;
+  data_transacao: string | null;
+  hora_transacao: string | null;
   user_auditoria: string;
   ordem: number;
 }
@@ -137,10 +142,12 @@ export default function ListarArquivos() {
     pan: '',
     expiry_date: '',
     tran_amount: '',
+    brl_amount: '',
     tran_currency: '986',
     currency: '986',
     merchant_name: '',
-    user_auditoria: 'CLRGUSR',
+    token: '',
+    nr_parcelas: '',
   });
 
   const buscaRef = useRef<HTMLInputElement>(null);
@@ -338,9 +345,14 @@ export default function ListarArquivos() {
           reg.pan.padEnd(19, '0'),
           reg.expiry_date,
           reg.tran_amount.toFixed(2).replace('.', '').padStart(12, '0'),
+          (reg.brl_amount ?? reg.tran_amount).toFixed(2).replace('.', '').padStart(12, '0'),
           reg.tran_currency,
           reg.currency,
           reg.merchant_name.padEnd(50, ' '),
+          (reg.token ?? '').padStart(19, '0'),
+          String(reg.nr_parcelas ?? 0).padStart(2, '0'),
+          (reg.data_transacao ?? '00000000'),
+          (reg.hora_transacao ?? '000000'),
           reg.user_auditoria,
         ].join('');
         conteudo += linha + '\n';
@@ -377,9 +389,14 @@ export default function ListarArquivos() {
         reg.pan.padEnd(19, '0'),
         reg.expiry_date,
         reg.tran_amount.toFixed(2).replace('.', '').padStart(12, '0'),
+        (reg.brl_amount ?? reg.tran_amount).toFixed(2).replace('.', '').padStart(12, '0'),
         reg.tran_currency,
         reg.currency,
         reg.merchant_name.padEnd(50, ' '),
+        (reg.token ?? '').padStart(19, '0'),
+        String(reg.nr_parcelas ?? 0).padStart(2, '0'),
+        (reg.data_transacao ?? '00000000'),
+        (reg.hora_transacao ?? '000000'),
         reg.user_auditoria,
       ].join('');
       conteudo += linha + '\n';
@@ -406,10 +423,12 @@ export default function ListarArquivos() {
       pan: reg.pan,
       expiry_date: reg.expiry_date,
       tran_amount: reg.tran_amount.toString(),
+      brl_amount: reg.brl_amount.toString(),
       tran_currency: reg.tran_currency,
       currency: reg.currency,
       merchant_name: reg.merchant_name,
-      user_auditoria: reg.user_auditoria,
+      token: reg.token || '',
+      nr_parcelas: reg.nr_parcelas ? reg.nr_parcelas.toString() : '',
     });
   }, []);
 
@@ -434,24 +453,28 @@ export default function ListarArquivos() {
           pan: formRegistro.pan,
           expiry_date: formRegistro.expiry_date,
           tran_amount: parseFloat(formRegistro.tran_amount),
+          brl_amount: parseFloat(formRegistro.brl_amount) || parseFloat(formRegistro.tran_amount),
           tran_currency: formRegistro.tran_currency,
           currency: formRegistro.currency,
           merchant_name: formRegistro.merchant_name.toUpperCase(),
-          user_auditoria: formRegistro.user_auditoria,
+          token: formRegistro.token.padStart(19, '0'),
+          nr_parcelas: parseInt(formRegistro.nr_parcelas) || 0,
         })
         .eq('id', regId);
 
       if (error) throw error;
 
-      setRegistros(prev => prev.map(r => 
-        r.id === regId ? { ...r, 
+      setRegistros(prev => prev.map(r =>
+        r.id === regId ? { ...r,
           pan: formRegistro.pan,
           expiry_date: formRegistro.expiry_date,
           tran_amount: parseFloat(formRegistro.tran_amount),
+          brl_amount: parseFloat(formRegistro.brl_amount) || parseFloat(formRegistro.tran_amount),
           tran_currency: formRegistro.tran_currency,
           currency: formRegistro.currency,
           merchant_name: formRegistro.merchant_name.toUpperCase(),
-          user_auditoria: formRegistro.user_auditoria,
+          token: formRegistro.token.padStart(19, '0'),
+          nr_parcelas: parseInt(formRegistro.nr_parcelas) || 0,
         } : r
       ));
       setRegistroEditando(null);
@@ -485,9 +508,9 @@ export default function ListarArquivos() {
   const handleCancelarEdicao = useCallback(() => {
     setRegistroEditando(null);
     setFormRegistro({
-      pan: '', expiry_date: '', tran_amount: '',
+      pan: '', expiry_date: '', tran_amount: '', brl_amount: '',
       tran_currency: '986', currency: '986',
-      merchant_name: '', user_auditoria: 'CLRGUSR',
+      merchant_name: '', token: '', nr_parcelas: '',
     });
   }, []);
 
@@ -771,23 +794,26 @@ export default function ListarArquivos() {
               <table className="w-full text-sm">
                 <thead className="sticky top-0 z-10">
                   <tr className="bg-[#F5F5F0] text-[#3C2E26] h-7 border-b border-[#EDE8E2]">
-                    <th className="text-left px-3 text-[10px] font-semibold uppercase tracking-wider w-8">#</th>
-                    <th className="text-left px-3 text-[10px] font-semibold uppercase tracking-wider w-[14%]">SIAIDCD</th>
-                    <th className="text-left px-3 text-[10px] font-semibold uppercase tracking-wider w-14">Bandeira</th>
-                    <th className="text-left px-3 text-[10px] font-semibold uppercase tracking-wider w-[16%]">PAN</th>
-                    <th className="text-left px-3 text-[10px] font-semibold uppercase tracking-wider w-12">Val</th>
-                    <th className="text-right px-3 text-[10px] font-semibold uppercase tracking-wider w-20">Tran Amount</th>
-                    <th className="text-center px-3 text-[10px] font-semibold uppercase tracking-wider w-12">Tran CCY</th>
-                    <th className="text-center px-3 text-[10px] font-semibold uppercase tracking-wider w-10">CCY</th>
-                    <th className="text-left px-3 text-[10px] font-semibold uppercase tracking-wider w-[14%]">Merchant</th>
-                    <th className="text-left px-3 text-[10px] font-semibold uppercase tracking-wider w-16">Auditoria</th>
-                    {modoEdicao && <th className="text-center px-3 text-[10px] font-semibold uppercase tracking-wider w-16"></th>}
+                    <th className="text-left px-2 text-[10px] font-semibold uppercase tracking-wider w-8">#</th>
+                    <th className="text-left px-2 text-[10px] font-semibold uppercase tracking-wider w-[12%]">SIAIDCD</th>
+                    <th className="text-left px-2 text-[10px] font-semibold uppercase tracking-wider w-12">Band.</th>
+                    <th className="text-left px-2 text-[10px] font-semibold uppercase tracking-wider w-[14%]">PAN</th>
+                    <th className="text-left px-2 text-[10px] font-semibold uppercase tracking-wider w-10">Val</th>
+                    <th className="text-right px-2 text-[10px] font-semibold uppercase tracking-wider w-20">Tran Amt</th>
+                    <th className="text-right px-2 text-[10px] font-semibold uppercase tracking-wider w-20">BRL Amt</th>
+                    <th className="text-center px-2 text-[10px] font-semibold uppercase tracking-wider w-10">T.CCY</th>
+                    <th className="text-center px-2 text-[10px] font-semibold uppercase tracking-wider w-10">CCY</th>
+                    <th className="text-left px-2 text-[10px] font-semibold uppercase tracking-wider w-[12%]">Merchant</th>
+                    <th className="text-left px-2 text-[10px] font-semibold uppercase tracking-wider w-28">Token</th>
+                    <th className="text-center px-2 text-[10px] font-semibold uppercase tracking-wider w-10">Parc</th>
+                    <th className="text-left px-2 text-[10px] font-semibold uppercase tracking-wider w-14">Audit.</th>
+                    {modoEdicao && <th className="text-center px-2 text-[10px] font-semibold uppercase tracking-wider w-14"></th>}
                   </tr>
                 </thead>
                 <tbody>
                   {registros.length === 0 ? (
                     <tr>
-                      <td colSpan={modoEdicao ? 12 : 11} className="py-8 text-center text-[#999999]">
+                      <td colSpan={modoEdicao ? 15 : 14} className="py-8 text-center text-[#999999]">
                         <p className="text-xs">Nenhum registro neste arquivo</p>
                       </td>
                     </tr>
@@ -798,79 +824,54 @@ export default function ListarArquivos() {
 
                         {registroEditando === reg.id && modoEdicao ? (
                           <>
+                            <td className="px-2 py-0.5 text-[10px] font-mono text-[#999999]">{reg.siaidcd}</td>
                             <td className="px-2 py-0.5">
-                              <input value={reg.siaidcd} disabled className="w-full h-6 px-1.5 text-[10px] text-[#999999] bg-[#F5F5F0] border border-[#D4D4CE] rounded outline-none font-mono" />
+                              <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium ${getBadgeBandeira(reg.bandeira || '')}`}>{reg.bandeira || '-'}</span>
                             </td>
                             <td className="px-2 py-0.5">
-                              <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium ${getBadgeBandeira(reg.bandeira || '')}`}>
-                                {reg.bandeira || '-'}
-                              </span>
+                              <input value={formRegistro.pan} onChange={(e) => setFormRegistro({...formRegistro, pan: e.target.value.replace(/\D/g, '').slice(0,19)})} maxLength={19} autoFocus
+                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none font-mono focus:border-[#C4A484]" />
                             </td>
                             <td className="px-2 py-0.5">
-                              <input 
-                                value={formRegistro.pan}
-                                onChange={(e) => setFormRegistro({...formRegistro, pan: e.target.value.replace(/\D/g, '').slice(0,19)})}
-                                maxLength={19}
-                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none font-mono focus:border-[#C4A484]"
-                                autoFocus
-                              />
+                              <input value={formRegistro.expiry_date} onChange={(e) => setFormRegistro({...formRegistro, expiry_date: e.target.value.replace(/\D/g, '').slice(0,4)})} maxLength={4}
+                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none font-mono focus:border-[#C4A484]" />
                             </td>
                             <td className="px-2 py-0.5">
-                              <input 
-                                value={formRegistro.expiry_date}
-                                onChange={(e) => setFormRegistro({...formRegistro, expiry_date: e.target.value.replace(/\D/g, '').slice(0,4)})}
-                                maxLength={4}
-                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none font-mono focus:border-[#C4A484]"
-                              />
+                              <input type="number" step="0.01" value={formRegistro.tran_amount}
+                                onChange={(e) => { const v = e.target.value; setFormRegistro(prev => ({...prev, tran_amount: v, brl_amount: prev.brl_amount === prev.tran_amount ? v : prev.brl_amount})); }}
+                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-right font-mono focus:border-[#C4A484]" />
                             </td>
                             <td className="px-2 py-0.5">
-                              <input 
-                                type="number" step="0.01"
-                                value={formRegistro.tran_amount}
-                                onChange={(e) => setFormRegistro({...formRegistro, tran_amount: e.target.value})}
-                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-right font-mono focus:border-[#C4A484]"
-                              />
+                              <input type="number" step="0.01" value={formRegistro.brl_amount} onChange={(e) => setFormRegistro({...formRegistro, brl_amount: e.target.value})}
+                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-right font-mono focus:border-[#C4A484]" />
                             </td>
                             <td className="px-2 py-0.5">
-                              <input 
-                                value={formRegistro.tran_currency}
-                                onChange={(e) => setFormRegistro({...formRegistro, tran_currency: e.target.value.replace(/\D/g, '').slice(0,3)})}
-                                maxLength={3}
-                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-center font-mono focus:border-[#C4A484]"
-                              />
+                              <input value={formRegistro.tran_currency} onChange={(e) => setFormRegistro({...formRegistro, tran_currency: e.target.value.replace(/\D/g, '').slice(0,3)})} maxLength={3}
+                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-center font-mono focus:border-[#C4A484]" />
                             </td>
                             <td className="px-2 py-0.5">
-                              <input 
-                                value={formRegistro.currency}
-                                onChange={(e) => setFormRegistro({...formRegistro, currency: e.target.value.replace(/\D/g, '').slice(0,3)})}
-                                maxLength={3}
-                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-center font-mono focus:border-[#C4A484]"
-                              />
+                              <input value={formRegistro.currency} onChange={(e) => setFormRegistro({...formRegistro, currency: e.target.value.replace(/\D/g, '').slice(0,3)})} maxLength={3}
+                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-center font-mono focus:border-[#C4A484]" />
                             </td>
                             <td className="px-2 py-0.5">
-                              <input 
-                                value={formRegistro.merchant_name}
-                                onChange={(e) => setFormRegistro({...formRegistro, merchant_name: e.target.value.toUpperCase()})}
-                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none uppercase focus:border-[#C4A484]"
-                              />
+                              <input value={formRegistro.merchant_name} onChange={(e) => setFormRegistro({...formRegistro, merchant_name: e.target.value.toUpperCase()})}
+                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none uppercase focus:border-[#C4A484]" />
                             </td>
                             <td className="px-2 py-0.5">
-                              <input 
-                                value={formRegistro.user_auditoria}
-                                disabled
-                                className="w-full h-6 px-1.5 text-[10px] text-[#999999] bg-[#F5F5F0] border border-[#D4D4CE] rounded outline-none uppercase font-mono"
-                              />
+                              <input value={formRegistro.token} onChange={(e) => setFormRegistro({...formRegistro, token: e.target.value.replace(/\D/g, '').slice(0,19)})} maxLength={19}
+                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none font-mono focus:border-[#C4A484]" />
                             </td>
+                            <td className="px-2 py-0.5">
+                              <input value={formRegistro.nr_parcelas} onChange={(e) => setFormRegistro({...formRegistro, nr_parcelas: e.target.value.replace(/\D/g, '').slice(0,2)})} maxLength={2}
+                                className="w-full h-6 px-1.5 text-[10px] text-[#3C2E26] bg-white border border-[#D4D4CE] rounded outline-none text-center font-mono focus:border-[#C4A484]" />
+                            </td>
+                            <td className="px-2 py-0.5 text-[10px] font-mono text-[#999999]">{reg.user_auditoria}</td>
                             <td className="px-2">
                               <div className="flex items-center justify-center gap-0.5">
-                                <button onClick={() => handleSalvarRegistro(reg.id)}
-                                  className="inline-flex items-center justify-center w-5 h-5 rounded text-[#059669] hover:bg-[#D1FAE5] transition-all"
-                                  title="Confirmar">
+                                <button onClick={() => handleSalvarRegistro(reg.id)} className="inline-flex items-center justify-center w-5 h-5 rounded text-[#059669] hover:bg-[#D1FAE5] transition-all" title="Confirmar">
                                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
                                 </button>
-                                <button onClick={handleCancelarEdicao}
-                                  className="inline-flex items-center justify-center w-5 h-5 rounded text-[#999999] hover:text-[#DC2626] hover:bg-[#FEE2E2] transition-all"
-                                  title="Cancelar">
+                                <button onClick={handleCancelarEdicao} className="inline-flex items-center justify-center w-5 h-5 rounded text-[#999999] hover:text-[#DC2626] hover:bg-[#FEE2E2] transition-all" title="Cancelar">
                                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                                 </button>
                               </div>
@@ -878,32 +879,31 @@ export default function ListarArquivos() {
                           </>
                         ) : (
                           <>
-                            <td className="px-3 font-mono text-[#6B5744] text-[10px] truncate max-w-[150px]">{reg.siaidcd}</td>
-                            <td className="px-3">
-                              <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium ${getBadgeBandeira(reg.bandeira || '')}`}>
-                                {reg.bandeira || '-'}
-                              </span>
+                            <td className="px-2 font-mono text-[#6B5744] text-[10px] truncate max-w-[120px]">{reg.siaidcd}</td>
+                            <td className="px-2">
+                              <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium ${getBadgeBandeira(reg.bandeira || '')}`}>{reg.bandeira || '-'}</span>
                             </td>
-                            <td className="px-3 font-mono text-[#1A1A1A] text-[10px] truncate max-w-[180px]">{reg.pan}</td>
-                            <td className="px-3 font-mono text-[#6B5744] text-[10px]">{reg.expiry_date}</td>
-                            <td className="px-3 text-right font-mono text-[#1A1A1A] text-[10px]">
+                            <td className="px-2 font-mono text-[#1A1A1A] text-[10px] truncate max-w-[160px]">{reg.pan}</td>
+                            <td className="px-2 font-mono text-[#6B5744] text-[10px]">{reg.expiry_date}</td>
+                            <td className="px-2 text-right font-mono text-[#1A1A1A] text-[10px]">
                               {reg.tran_amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                             </td>
-                            <td className="px-3 text-center font-mono text-[#6B5744] text-[10px]">{reg.tran_currency}</td>
-                            <td className="px-3 text-center font-mono text-[#6B5744] text-[10px]">{reg.currency}</td>
-                            <td className="px-3 text-[#999999] text-[10px] truncate max-w-[150px]" title={reg.merchant_name}>{reg.merchant_name}</td>
-                            <td className="px-3 font-mono text-[#999999] text-[10px]">{reg.user_auditoria}</td>
+                            <td className="px-2 text-right font-mono text-[#1A1A1A] text-[10px]">
+                              {(reg.brl_amount ?? reg.tran_amount).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                            </td>
+                            <td className="px-2 text-center font-mono text-[#6B5744] text-[10px]">{reg.tran_currency}</td>
+                            <td className="px-2 text-center font-mono text-[#6B5744] text-[10px]">{reg.currency}</td>
+                            <td className="px-2 text-[#999999] text-[10px] truncate max-w-[130px]" title={reg.merchant_name}>{reg.merchant_name}</td>
+                            <td className="px-2 font-mono text-[#6B5744] text-[10px] truncate max-w-[110px]" title={reg.token}>{reg.token || '—'}</td>
+                            <td className="px-2 text-center font-mono text-[#6B5744] text-[10px]">{reg.nr_parcelas || '—'}</td>
+                            <td className="px-2 font-mono text-[#999999] text-[10px]">{reg.user_auditoria}</td>
                             {modoEdicao && (
                               <td className="px-2">
                                 <div className="flex items-center justify-center gap-0.5">
-                                  <button onClick={() => handleEditarRegistro(reg)}
-                                    className="inline-flex items-center justify-center w-5 h-5 rounded text-[#999999] hover:text-[#C4A484] hover:bg-[#FDF8F3] transition-all"
-                                    title="Editar">
+                                  <button onClick={() => handleEditarRegistro(reg)} className="inline-flex items-center justify-center w-5 h-5 rounded text-[#999999] hover:text-[#C4A484] hover:bg-[#FDF8F3] transition-all" title="Editar">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                                   </button>
-                                  <button onClick={() => handleExcluirRegistro(reg.id)}
-                                    className="inline-flex items-center justify-center w-5 h-5 rounded text-[#999999] hover:text-[#DC2626] hover:bg-[#FEE2E2] transition-all"
-                                    title="Excluir">
+                                  <button onClick={() => handleExcluirRegistro(reg.id)} className="inline-flex items-center justify-center w-5 h-5 rounded text-[#999999] hover:text-[#DC2626] hover:bg-[#FEE2E2] transition-all" title="Excluir">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
                                   </button>
                                 </div>

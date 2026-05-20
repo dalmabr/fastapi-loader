@@ -20,6 +20,7 @@ export interface Database {
           role: 'admin' | 'operator'
           ativo: boolean
           created_at: string
+          user_code: string | null
         }
         Insert: {
           id: string
@@ -27,12 +28,14 @@ export interface Database {
           role?: 'admin' | 'operator'
           ativo?: boolean
           created_at?: string
+          user_code?: string | null
         }
         Update: {
           id?: string
           email?: string
           role?: 'admin' | 'operator'
           ativo?: boolean
+          user_code?: string | null
         }
         Relationships: []
       }
@@ -91,9 +94,14 @@ export interface Database {
           pan: string
           expiry_date: string
           tran_amount: number
+          brl_amount: number
           tran_currency: string
           currency: string
           merchant_name: string
+          token: string
+          nr_parcelas: number
+          data_transacao: string | null
+          hora_transacao: string | null
           user_auditoria: string
           ordem: number
         }
@@ -105,9 +113,14 @@ export interface Database {
           pan: string
           expiry_date: string
           tran_amount: number
+          brl_amount?: number
           tran_currency: string
           currency: string
           merchant_name: string
+          token?: string
+          nr_parcelas?: number
+          data_transacao?: string | null
+          hora_transacao?: string | null
           user_auditoria: string
           ordem: number
         }
@@ -119,9 +132,14 @@ export interface Database {
           pan?: string
           expiry_date?: string
           tran_amount?: number
+          brl_amount?: number
           tran_currency?: string
           currency?: string
           merchant_name?: string
+          token?: string
+          nr_parcelas?: number
+          data_transacao?: string | null
+          hora_transacao?: string | null
           user_auditoria?: string
           ordem?: number
         }
