@@ -30,7 +30,17 @@ Deno.serve(async (req) => {
       return json({ detail: 'Token inválido' }, 401)
     }
 
-    if (user.app_metadata?.role !== 'admin') {
+    const adminClient = createClient(supabaseUrl, serviceRoleKey, {
+      auth: { autoRefreshToken: false, persistSession: false },
+    })
+
+    const { data: profile } = await adminClient
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+
+    if (profile?.role !== 'admin') {
       return json({ detail: 'Acesso restrito a administradores' }, 403)
     }
 
@@ -39,10 +49,6 @@ Deno.serve(async (req) => {
     if (!email || !password) {
       return json({ detail: 'E-mail e senha são obrigatórios' }, 400)
     }
-
-    const adminClient = createClient(supabaseUrl, serviceRoleKey, {
-      auth: { autoRefreshToken: false, persistSession: false },
-    })
 
     const { data, error } = await adminClient.auth.admin.createUser({
       email,
