@@ -1,0 +1,5 @@
+[
+  {"name": "CODENT", "type": "char", "size": 4},
+  {"name": "TIPOMSGON", "type": "char", "size": 4},
+  {"name": "CODPROON", "type": "decimal", "size": 4}
+]

@@ -1,0 +1,529 @@
+[
+  {
+    "name": "CODENT",
+    "cobolName": "CODENT",
+    "type": "char",
+    "size": 4,
+    "scale": 0
+  },
+  {
+    "name": "TIPOMSGON",
+    "cobolName": "TIPOMSGON",
+    "type": "char",
+    "size": 4,
+    "scale": 0
+  },
+  {
+    "name": "CODPROON",
+    "cobolName": "CODPROON",
+    "type": "decimal",
+    "size": 8,
+    "scale": 0
+  },
+  {
+    "name": "SIAIDCD",
+    "cobolName": "SIAIDCD",
+    "type": "char",
+    "size": 19,
+    "scale": 0
+  },
+  {
+    "name": "PAN",
+    "cobolName": "PAN",
+    "type": "char",
+    "size": 22,
+    "scale": 0
+  },
+  {
+    "name": "CODMAR",
+    "cobolName": "CODMAR",
+    "type": "decimal",
+    "size": 4,
+    "scale": 0
+  },
+  {
+    "name": "INDTIPT",
+    "cobolName": "INDTIPT",
+    "type": "decimal",
+    "size": 4,
+    "scale": 0
+  },
+  {
+    "name": "INDDEBCRE",
+    "cobolName": "INDDEBCRE",
+    "type": "decimal",
+    "size": 3,
+    "scale": 0
+  },
+  {
+    "name": "IMPTRN",
+    "cobolName": "IMPTRN",
+    "type": "decimal",
+    "size": 19,
+    "scale": 2
+  },
+  {
+    "name": "CLAMONTRN",
+    "cobolName": "CLAMONTRN",
+    "type": "decimal",
+    "size": 5,
+    "scale": 0
+  },
+  {
+    "name": "IMPCCA",
+    "cobolName": "IMPCCA",
+    "type": "decimal",
+    "size": 19,
+    "scale": 2
+  },
+  {
+    "name": "CLAMONCCA",
+    "cobolName": "CLAMONCCA",
+    "type": "decimal",
+    "size": 5,
+    "scale": 0
+  },
+  {
+    "name": "IMPDIV",
+    "cobolName": "IMPDIV",
+    "type": "decimal",
+    "size": 19,
+    "scale": 2
+  },
+  {
+    "name": "CLAMONDIV",
+    "cobolName": "CLAMONDIV",
+    "type": "decimal",
+    "size": 5,
+    "scale": 0
+  },
+  {
+    "name": "FECTRN",
+    "cobolName": "FECTRN",
+    "type": "char",
+    "size": 10,
+    "scale": 0
+  },
+  {
+    "name": "HORTRN",
+    "cobolName": "HORTRN",
+    "type": "char",
+    "size": 8,
+    "scale": 0
+  },
+  {
+    "name": "CMBAPLI",
+    "cobolName": "CMBAPLI",
+    "type": "decimal",
+    "size": 11,
+    "scale": 4
+  },
+  {
+    "name": "CODACT",
+    "cobolName": "CODACT",
+    "type": "decimal",
+    "size": 6,
+    "scale": 0
+  },
+  {
+    "name": "CODPAIS",
+    "cobolName": "CODPAIS",
+    "type": "decimal",
+    "size": 5,
+    "scale": 0
+  },
+  {
+    "name": "MODENTDAT",
+    "cobolName": "MODENTDAT",
+    "type": "char",
+    "size": 12,
+    "scale": 0
+  },
+  {
+    "name": "SESIONORI",
+    "cobolName": "SESIONORI",
+    "type": "char",
+    "size": 12,
+    "scale": 0
+  },
+  {
+    "name": "SESIONSIA",
+    "cobolName": "SESIONSIA",
+    "type": "char",
+    "size": 7,
+    "scale": 0
+  },
+  {
+    "name": "IMPTASAS",
+    "cobolName": "IMPTASAS",
+    "type": "decimal",
+    "size": 19,
+    "scale": 2
+  },
+  {
+    "name": "IDADQUIR",
+    "cobolName": "IDADQUIR",
+    "type": "char",
+    "size": 11,
+    "scale": 0
+  },
+  {
+    "name": "CODRED",
+    "cobolName": "CODRED",
+    "type": "char",
+    "size": 11,
+    "scale": 0
+  },
+  {
+    "name": "NUMREFOPE",
+    "cobolName": "NUMREFOPE",
+    "type": "decimal",
+    "size": 14,
+    "scale": 0
+  },
+  {
+    "name": "IDTERM",
+    "cobolName": "IDTERM",
+    "type": "char",
+    "size": 16,
+    "scale": 0
+  },
+  {
+    "name": "CODCOM",
+    "cobolName": "CODCOM",
+    "type": "char",
+    "size": 15,
+    "scale": 0
+  },
+  {
+    "name": "NOMCOM",
+    "cobolName": "NOMCOM",
+    "type": "char",
+    "size": 40,
+    "scale": 0
+  },
+  {
+    "name": "LOCALIDAD",
+    "cobolName": "LOCALIDAD",
+    "type": "char",
+    "size": 15,
+    "scale": 0
+  },
+  {
+    "name": "RTSITD",
+    "cobolName": "RTSITD",
+    "type": "char",
+    "size": 40,
+    "scale": 0
+  },
+  {
+    "name": "DATORI",
+    "cobolName": "DATORI",
+    "type": "char",
+    "size": 30,
+    "scale": 0
+  },
+  {
+    "name": "NUMAUT",
+    "cobolName": "NUMAUT",
+    "type": "char",
+    "size": 6,
+    "scale": 0
+  },
+  {
+    "name": "CODRESPU",
+    "cobolName": "CODRESPU",
+    "type": "char",
+    "size": 3,
+    "scale": 0
+  },
+  {
+    "name": "CODACCRED",
+    "cobolName": "CODACCRED",
+    "type": "decimal",
+    "size": 5,
+    "scale": 0
+  },
+  {
+    "name": "TIPFRAN",
+    "cobolName": "TIPFRAN",
+    "type": "decimal",
+    "size": 6,
+    "scale": 0
+  },
+  {
+    "name": "INDNORCOR",
+    "cobolName": "INDNORCOR",
+    "type": "decimal",
+    "size": 3,
+    "scale": 0
+  },
+  {
+    "name": "TIPOFAC",
+    "cobolName": "TIPOFAC",
+    "type": "decimal",
+    "size": 6,
+    "scale": 0
+  },
+  {
+    "name": "INDPREAUT",
+    "cobolName": "INDPREAUT",
+    "type": "decimal",
+    "size": 3,
+    "scale": 0
+  },
+  {
+    "name": "INDCRUCE",
+    "cobolName": "INDCRUCE",
+    "type": "decimal",
+    "size": 3,
+    "scale": 0
+  },
+  {
+    "name": "INDANUL",
+    "cobolName": "INDANUL",
+    "type": "decimal",
+    "size": 3,
+    "scale": 0
+  },
+  {
+    "name": "INDRETSAL",
+    "cobolName": "INDRETSAL",
+    "type": "char",
+    "size": 1,
+    "scale": 0
+  },
+  {
+    "name": "IMPTRNCON",
+    "cobolName": "IMPTRNCON",
+    "type": "decimal",
+    "size": 19,
+    "scale": 2
+  },
+  {
+    "name": "IMPAUTCON",
+    "cobolName": "IMPAUTCON",
+    "type": "decimal",
+    "size": 19,
+    "scale": 2
+  },
+  {
+    "name": "CLAMONCON",
+    "cobolName": "CLAMONCON",
+    "type": "decimal",
+    "size": 5,
+    "scale": 0
+  },
+  {
+    "name": "FECCONTA",
+    "cobolName": "FECCONTA",
+    "type": "char",
+    "size": 10,
+    "scale": 0
+  },
+  {
+    "name": "NUMRETSAL",
+    "cobolName": "NUMRETSAL",
+    "type": "decimal",
+    "size": 12,
+    "scale": 0
+  },
+  {
+    "name": "IMPRETSAL",
+    "cobolName": "IMPRETSAL",
+    "type": "decimal",
+    "size": 19,
+    "scale": 2
+  },
+  {
+    "name": "CLAMONRET",
+    "cobolName": "CLAMONRET",
+    "type": "decimal",
+    "size": 5,
+    "scale": 0
+  },
+  {
+    "name": "CENTALTA",
+    "cobolName": "CENTALTA",
+    "type": "char",
+    "size": 4,
+    "scale": 0
+  },
+  {
+    "name": "CUENTA",
+    "cobolName": "CUENTA",
+    "type": "char",
+    "size": 12,
+    "scale": 0
+  },
+  {
+    "name": "IMPPROP",
+    "cobolName": "IMPPROP",
+    "type": "decimal",
+    "size": 19,
+    "scale": 2
+  },
+  {
+    "name": "ACCEMICRE",
+    "cobolName": "ACCEMICRE",
+    "type": "char",
+    "size": 1,
+    "scale": 0
+  },
+  {
+    "name": "ACCEMIDEB",
+    "cobolName": "ACCEMIDEB",
+    "type": "char",
+    "size": 1,
+    "scale": 0
+  },
+  {
+    "name": "ACCMERCH",
+    "cobolName": "ACCMERCH",
+    "type": "char",
+    "size": 1,
+    "scale": 0
+  },
+  {
+    "name": "INDPROINC",
+    "cobolName": "INDPROINC",
+    "type": "char",
+    "size": 1,
+    "scale": 0
+  },
+  {
+    "name": "FECCADTAR",
+    "cobolName": "FECCADTAR",
+    "type": "decimal",
+    "size": 8,
+    "scale": 0
+  },
+  {
+    "name": "CALFRAUDE",
+    "cobolName": "CALFRAUDE",
+    "type": "char",
+    "size": 3,
+    "scale": 0
+  },
+  {
+    "name": "NUMPASIVO",
+    "cobolName": "NUMPASIVO",
+    "type": "char",
+    "size": 24,
+    "scale": 0
+  },
+  {
+    "name": "CODBLQFRA",
+    "cobolName": "CODBLQFRA",
+    "type": "char",
+    "size": 2,
+    "scale": 0
+  },
+  {
+    "name": "TIPOLIN",
+    "cobolName": "TIPOLIN",
+    "type": "char",
+    "size": 4,
+    "scale": 0
+  },
+  {
+    "name": "LINREF",
+    "cobolName": "LINREF",
+    "type": "decimal",
+    "size": 10,
+    "scale": 0
+  },
+  {
+    "name": "TIPOLIM",
+    "cobolName": "TIPOLIM",
+    "type": "char",
+    "size": 1,
+    "scale": 0
+  },
+  {
+    "name": "FORPAGO",
+    "cobolName": "FORPAGO",
+    "type": "decimal",
+    "size": 4,
+    "scale": 0
+  },
+  {
+    "name": "RESOLUTOR",
+    "cobolName": "RESOLUTOR",
+    "type": "char",
+    "size": 11,
+    "scale": 0
+  },
+  {
+    "name": "CODENTUMO",
+    "cobolName": "CODENTUMO",
+    "type": "char",
+    "size": 4,
+    "scale": 0
+  },
+  {
+    "name": "CODOFIUMO",
+    "cobolName": "CODOFIUMO",
+    "type": "char",
+    "size": 4,
+    "scale": 0
+  },
+  {
+    "name": "USUARIOUMO",
+    "cobolName": "USUARIOUMO",
+    "type": "char",
+    "size": 8,
+    "scale": 0
+  },
+  {
+    "name": "CODTERMUMO",
+    "cobolName": "CODTERMUMO",
+    "type": "char",
+    "size": 8,
+    "scale": 0
+  },
+  {
+    "name": "CONTCUR",
+    "cobolName": "CONTCUR",
+    "type": "char",
+    "size": 26,
+    "scale": 0
+  },
+  {
+    "name": "DATADI_HEX",
+    "cobolName": "DATADI",
+    "type": "char",
+    "size": 1304,
+    "scale": 0,
+    "source": "hex_group"
+  },
+  {
+    "name": "CO_LATITUDE_TRANSACAO",
+    "cobolName": "CO-LATITUDE-TRANSACAO",
+    "type": "char",
+    "size": 20,
+    "scale": 0
+  },
+  {
+    "name": "CO_LONGITUDE_TRANSACAO",
+    "cobolName": "CO-LONGITUDE-TRANSACAO",
+    "type": "char",
+    "size": 20,
+    "scale": 0
+  },
+  {
+    "name": "DATADI2_HEX",
+    "cobolName": "DATADI2",
+    "type": "char",
+    "size": 804,
+    "scale": 0,
+    "source": "hex_group"
+  },
+  {
+    "name": "CODENVFRAUDE",
+    "cobolName": "CODENVFRAUDE",
+    "type": "char",
+    "size": 20,
+    "scale": 0
+  }
+]
