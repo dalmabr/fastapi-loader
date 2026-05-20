@@ -1,13 +1,16 @@
 import { Navigate } from 'react-router-dom';
 import { ReactNode } from 'react';
 import { useAuth } from './AuthContext';
+import type { Role } from './AuthContext';
+
+type UserRole = Exclude<Role, null>;
 
 interface Props {
   children: ReactNode;
-  requiredRole?: 'admin';
+  roles?: UserRole[];
 }
 
-export default function ProtectedRoute({ children, requiredRole }: Props) {
+export default function ProtectedRoute({ children, roles }: Props) {
   const { session, loading, role } = useAuth();
 
   if (loading) {
@@ -23,8 +26,7 @@ export default function ProtectedRoute({ children, requiredRole }: Props) {
 
   if (!session) return <Navigate to="/login" replace />;
 
-  // Aguarda o perfil carregar antes de bloquear rotas admin
-  if (requiredRole === 'admin' && role === null) {
+  if (roles && role === null) {
     return (
       <div className="h-screen flex items-center justify-center bg-white">
         <svg className="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3C2E26" strokeWidth="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
@@ -32,7 +34,9 @@ export default function ProtectedRoute({ children, requiredRole }: Props) {
     );
   }
 
-  if (requiredRole === 'admin' && role !== 'admin') return <Navigate to="/" replace />;
+  if (roles && role && !roles.includes(role as UserRole)) {
+    return <Navigate to="/" replace />;
+  }
 
   return <>{children}</>;
 }
