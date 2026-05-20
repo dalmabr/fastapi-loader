@@ -1,0 +1,69 @@
+/* ============================================
+   FASTAPI LOADER - Design System
+   Alinhado com SIA-SAT
+   ============================================ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+/* Variáveis CSS */
+:root {
+  --bg-page: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-header: #2D2D2D;
+  --bg-table-header: #3C2E26;
+  --bg-table-row-alt: #FAF7F4;
+  --bg-hover: #FDF8F3;
+  --bg-pag-active: #FDF8F3;
+  
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B5744;
+  --text-muted: #999999;
+  --text-inverse: #FFFFFF;
+  --text-link: #0071E3;
+  --text-marrom: #3C2E26;
+  
+  --brand: #C4A484;
+  --brand-hover: #B08F6E;
+  --marrom: #3C2E26;
+  
+  --border: #EDE8E2;
+  --border-strong: #D6C4B0;
+  --border-input: #D4D4CE;
+   
+  --radius-pill: 50px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+body {
+  font-family: '',  BlinkMacSystemFont, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-page); }
+::-webkit-scrollbar-thumb { background: var(--border-input); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Animações */
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out;
+}

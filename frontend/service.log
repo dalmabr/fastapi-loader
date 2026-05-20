@@ -1,0 +1,594 @@
+
+> loader-app@0.1.0 start
+> react-scripts start
+
+Starting the development server...
+
+Compiled successfully!
+
+You can now view loader-app in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.108.117.3:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 14 hidden lines
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\source-map-loader\dist\cjs.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\source-map-loader\dist\cjs.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+webpack compiled with [1m[31m4 errors[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 12 hidden lines
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\babel-loader\lib\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\babel-loader\lib\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+webpack compiled with [1m[31m4 errors[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\babel-loader\lib\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\babel-loader\lib\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+webpack compiled with [1m[31m4 errors[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\babel-loader\lib\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\babel-loader\lib\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+webpack compiled with [1m[31m4 errors[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack-dev-server\client\index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Afalse%7D&reconnect=10&hot=true&live-reload=true' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack\hot\dev-server.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\Compilation.js:2143:28
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1076:13
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:10:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:456:22
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:9:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:642:22
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:197:10
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:878:23
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1390:5
+    at C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2830:7
+    at done (C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2925:13)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1349:10
+    at finishWithoutResolve (C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:945:11)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1034:14
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:52:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m6 errors[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack-dev-server\client\index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Afalse%7D&reconnect=10&hot=true&live-reload=true' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack\hot\dev-server.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\Compilation.js:2143:28
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1076:13
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:10:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:456:22
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:9:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:642:22
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:197:10
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:878:23
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1390:5
+    at C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2830:7
+    at done (C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2925:13)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1349:10
+    at finishWithoutResolve (C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:945:11)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1034:14
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:52:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m6 errors[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack-dev-server\client\index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Afalse%7D&reconnect=10&hot=true&live-reload=true' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack\hot\dev-server.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\Compilation.js:2143:28
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1076:13
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:10:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:456:22
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:9:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:642:22
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:193:10
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:878:23
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1390:5
+    at C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2830:7
+    at done (C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2925:13)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1349:10
+    at finishWithoutResolve (C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:945:11)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1034:14
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:52:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m6 errors[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack-dev-server\client\index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Afalse%7D&reconnect=10&hot=true&live-reload=true' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack\hot\dev-server.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\Compilation.js:2143:28
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1076:13
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:10:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:456:22
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:9:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:642:22
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:197:10
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:878:23
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1390:5
+    at C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2830:7
+    at done (C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2925:13)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1349:10
+    at finishWithoutResolve (C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:945:11)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1034:14
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:52:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m6 errors[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack-dev-server\client\index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Afalse%7D&reconnect=10&hot=true&live-reload=true' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack\hot\dev-server.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\Compilation.js:2143:28
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1076:13
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:10:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:456:22
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:9:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:642:22
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:193:10
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:878:23
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1390:5
+    at C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2830:7
+    at done (C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2925:13)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1349:10
+    at finishWithoutResolve (C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:945:11)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1034:14
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:52:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m6 errors[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack-dev-server\client\index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Afalse%7D&reconnect=10&hot=true&live-reload=true' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack\hot\dev-server.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\Compilation.js:2143:28
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1076:13
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:10:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:456:22
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:9:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:642:22
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:197:10
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:878:23
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1390:5
+    at C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2830:7
+    at done (C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2925:13)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1349:10
+    at finishWithoutResolve (C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:945:11)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1034:14
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:52:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m6 errors[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack-dev-server\client\index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Afalse%7D&reconnect=10&hot=true&live-reload=true' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack\hot\dev-server.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\Compilation.js:2143:28
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1076:13
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:10:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:456:22
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:9:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:642:22
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:197:10
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:878:23
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1390:5
+    at C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2830:7
+    at done (C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2925:13)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1349:10
+    at finishWithoutResolve (C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:945:11)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1034:14
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:52:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m6 errors[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack-dev-server\client\index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Afalse%7D&reconnect=10&hot=true&live-reload=true' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack\hot\dev-server.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\Compilation.js:2143:28
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1076:13
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:10:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:456:22
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:9:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:642:22
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:197:10
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:878:23
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1390:5
+    at C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2830:7
+    at done (C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2925:13)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1349:10
+    at finishWithoutResolve (C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:945:11)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1034:14
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:52:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m6 errors[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack-dev-server\client\index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Afalse%7D&reconnect=10&hot=true&live-reload=true' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\webpack\hot\dev-server.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[32mmain[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\src\index.js' in 'C:\projetos\fastapi-loader\frontend'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'C:\projetos\fastapi-loader\frontend\node_modules\html-webpack-plugin\lib\loader.js' in 'C:\projetos\fastapi-loader\frontend'
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\Compilation.js:2143:28
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1076:13
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:10:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:456:22
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:9:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:642:22
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:193:10
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:878:23
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1390:5
+    at C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2830:7
+    at done (C:\projetos\fastapi-loader\frontend\node_modules\neo-async\async.js:2925:13)
+    at C:\projetos\fastapi-loader\frontend\node_modules\webpack\lib\NormalModuleFactory.js:1349:10
+    at finishWithoutResolve (C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:945:11)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1034:14
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:94:43
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:16:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\Resolver.js:1111:5
+    at eval (eval at create (C:\projetos\fastapi-loader\frontend\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at C:\projetos\fastapi-loader\frontend\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:52:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m6 errors[39m[22m
