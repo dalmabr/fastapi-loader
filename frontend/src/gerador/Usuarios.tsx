@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
+import { useAuth } from '../auth/AuthContext';
 
 interface Profile {
   id: string;
@@ -17,6 +18,7 @@ interface Toast {
 }
 
 export default function Usuarios() {
+  const { session } = useAuth();
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [carregando, setCarregando] = useState(true);
   const [toasts, setToasts] = useState<Toast[]>([]);
@@ -61,12 +63,18 @@ export default function Usuarios() {
 
     setCriando(true);
     try {
-      const { data, error } = await supabase.functions.invoke('criar-usuario', {
-        body: { email: novoEmail.trim(), password: novoSenha.trim(), role: novoRole },
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const resp = await fetch(`${apiUrl}/auth/users`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session?.access_token}`,
+        },
+        body: JSON.stringify({ email: novoEmail.trim(), password: novoSenha.trim(), role: novoRole }),
       });
 
-      if (error) throw new Error(error.message || 'Erro ao criar usuário');
-      if (data?.detail) throw new Error(data.detail);
+      const data = await resp.json();
+      if (!resp.ok) throw new Error(data?.detail || 'Erro ao criar usuário');
 
       mostrarToast(`Usuário ${novoEmail} criado com sucesso!`);
       setNovoEmail('');
