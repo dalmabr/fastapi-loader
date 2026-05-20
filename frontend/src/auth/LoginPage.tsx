@@ -9,6 +9,7 @@ export default function LoginPage() {
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
+  const [mostrarSenha, setMostrarSenha] = useState(false);
 
   if (session) return <Navigate to="/" replace />;
 
@@ -24,12 +25,22 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F5F0] flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-[#F5F5F0] flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-sm">
+
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-[#3C2E26]">AxxioLab</h1>
+          <div className="inline-flex items-center justify-center mb-4">
+            <span
+              className="font-serif text-2xl font-bold text-[#3C2E26] border-2 border-[#3C2E26] px-4 py-1.5 rounded-lg tracking-widest select-none"
+              aria-label="A idêntico a A — axioma da identidade"
+            >
+              A≡A
+            </span>
+          </div>
+          <h1 className="text-xl font-bold text-[#3C2E26]">AxxioLab</h1>
           <p className="text-sm text-[#6B5744] mt-1">Gerador de Arquivos de Clearing</p>
         </div>
+
         <div className="bg-white rounded-xl border border-[#EDE8E2] shadow-sm p-8">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
@@ -37,27 +48,51 @@ export default function LoginPage() {
               <input
                 type="email"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={e => { setErro(''); setEmail(e.target.value); }}
                 required
                 autoFocus
                 className="w-full h-10 px-3 text-sm text-[#3C2E26] bg-white border border-[#D4D4CE] rounded-lg outline-none focus:border-[#C4A484] focus:ring-1 focus:ring-[#C4A484]/20"
                 placeholder="usuario@empresa.com"
               />
             </div>
+
             <div>
               <label className="text-xs font-medium text-[#3C2E26] block mb-1.5">Senha</label>
-              <input
-                type="password"
-                value={senha}
-                onChange={e => setSenha(e.target.value)}
-                required
-                className="w-full h-10 px-3 text-sm text-[#3C2E26] bg-white border border-[#D4D4CE] rounded-lg outline-none focus:border-[#C4A484] focus:ring-1 focus:ring-[#C4A484]/20"
-                placeholder="••••••••"
-              />
+              <div className="relative">
+                <input
+                  type={mostrarSenha ? 'text' : 'password'}
+                  value={senha}
+                  onChange={e => { setErro(''); setSenha(e.target.value); }}
+                  required
+                  className="w-full h-10 px-3 pr-10 text-sm text-[#3C2E26] bg-white border border-[#D4D4CE] rounded-lg outline-none focus:border-[#C4A484] focus:ring-1 focus:ring-[#C4A484]/20"
+                  placeholder="••••••••"
+                />
+                <button
+                  type="button"
+                  onClick={() => setMostrarSenha(v => !v)}
+                  tabIndex={-1}
+                  aria-label={mostrarSenha ? 'Ocultar senha' : 'Mostrar senha'}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9B8B7E] hover:text-[#3C2E26] transition-colors"
+                >
+                  {mostrarSenha ? (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                      <line x1="1" y1="1" x2="23" y2="23"/>
+                    </svg>
+                  ) : (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
+
             {erro && (
               <p className="text-xs text-[#DC2626] bg-[#FEE2E2] border border-[#EF4444] rounded-lg px-3 py-2">{erro}</p>
             )}
+
             <button
               type="submit"
               disabled={carregando || !email || !senha}
@@ -72,6 +107,7 @@ export default function LoginPage() {
             </button>
           </form>
         </div>
+
       </div>
     </div>
   );
