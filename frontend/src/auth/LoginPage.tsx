@@ -30,7 +30,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
 
         <div className="flex justify-center mb-8">
-          <img src={logoUrl} alt="AxxioLab" className="h-20" />
+          <img src={logoUrl} alt="AxxioLab" className="h-40" />
         </div>
 
         <div className="bg-white rounded-xl border border-[#EDE8E2] shadow-sm p-8">

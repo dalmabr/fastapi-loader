@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import type { Role } from '../auth/AuthContext';
-import logoUrl from '../logo.svg';
+import logoUrl from '../logo_in.svg';
 
 type UserRole = Exclude<Role, null>;
 
@@ -102,7 +102,7 @@ export default function Navbar() {
     <nav ref={navRef} className="bg-[#2D2D2D] text-white px-6 flex items-center justify-between sticky top-0 z-50 h-12">
 
       <Link to="/" className="shrink-0 mr-6">
-        <img src={logoUrl} alt="AxxioLab" className="h-7 brightness-0 invert" />
+        <img src={logoUrl} alt="AxxioLab" className="h-5 brightness-0 invert" />
       </Link>
 
       <div className="flex items-center flex-1">
