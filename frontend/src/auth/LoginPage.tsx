@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react';
 import { Navigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { useAuth } from './AuthContext';
+import logoUrl from '../logo.svg';
 
 export default function LoginPage() {
   const { session } = useAuth();
@@ -28,16 +29,8 @@ export default function LoginPage() {
     <div className="min-h-screen bg-[#F5F5F0] flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-sm">
 
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center mb-3">
-            <span
-              className="font-serif text-2xl font-bold text-[#3C2E26] border-2 border-[#3C2E26] px-4 py-1.5 rounded-lg tracking-widest select-none"
-              aria-label="A idêntico a A — axioma da identidade"
-            >
-              A≡A
-            </span>
-          </div>
-          <h1 className="text-xl font-bold text-[#3C2E26]">AxxioLab</h1>
+        <div className="flex justify-center mb-8">
+          <img src={logoUrl} alt="AxxioLab" className="h-20" />
         </div>
 
         <div className="bg-white rounded-xl border border-[#EDE8E2] shadow-sm p-8">

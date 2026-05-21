@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import type { Role } from '../auth/AuthContext';
+import logoUrl from '../logo.svg';
 
 type UserRole = Exclude<Role, null>;
 
@@ -100,11 +101,8 @@ export default function Navbar() {
   return (
     <nav ref={navRef} className="bg-[#2D2D2D] text-white px-6 flex items-center justify-between sticky top-0 z-50 h-12">
 
-      <Link to="/" className="flex items-center gap-2.5 shrink-0 mr-6">
-        <span className="font-serif text-sm font-bold border border-white/50 px-2 py-0.5 rounded tracking-widest select-none">
-          A≡A
-        </span>
-        <span className="text-sm font-medium">AxxioLab</span>
+      <Link to="/" className="shrink-0 mr-6">
+        <img src={logoUrl} alt="AxxioLab" className="h-7 brightness-0 invert" />
       </Link>
 
       <div className="flex items-center flex-1">
