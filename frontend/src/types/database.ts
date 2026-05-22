@@ -173,6 +173,118 @@ export interface Database {
         }
         Relationships: []
       }
+      projetos: {
+        Row: {
+          id: string
+          projeto: string
+          nome: string
+          status: 'planejado' | 'em_andamento' | 'concluido' | 'cancelado' | 'com_impedimento'
+          responsavel: string | null
+          data_apresentacao: string | null
+          sprint: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          projeto: string
+          nome: string
+          status?: 'planejado' | 'em_andamento' | 'concluido' | 'cancelado' | 'com_impedimento'
+          responsavel?: string | null
+          data_apresentacao?: string | null
+          sprint?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          projeto?: string
+          nome?: string
+          status?: 'planejado' | 'em_andamento' | 'concluido' | 'cancelado' | 'com_impedimento'
+          responsavel?: string | null
+          data_apresentacao?: string | null
+          sprint?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "projetos_responsavel_fkey"
+            columns: ["responsavel"]
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      cronograma_itens: {
+        Row: {
+          id: string
+          projeto_id: string
+          nome: string
+          duracao_dias_uteis: number
+          data_inicio_manual: string | null
+          responsavel: string | null
+          percentual: number
+          ordem: number
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          projeto_id: string
+          nome: string
+          duracao_dias_uteis?: number
+          data_inicio_manual?: string | null
+          responsavel?: string | null
+          percentual?: number
+          ordem?: number
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          projeto_id?: string
+          nome?: string
+          duracao_dias_uteis?: number
+          data_inicio_manual?: string | null
+          responsavel?: string | null
+          percentual?: number
+          ordem?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cronograma_itens_projeto_id_fkey"
+            columns: ["projeto_id"]
+            referencedRelation: "projetos"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      cronograma_dependencias: {
+        Row: {
+          id: string
+          item_id: string
+          depende_de: string
+        }
+        Insert: {
+          id?: string
+          item_id: string
+          depende_de: string
+        }
+        Update: {
+          id?: string
+          item_id?: string
+          depende_de?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cronograma_dep_item_fkey"
+            columns: ["item_id"]
+            referencedRelation: "cronograma_itens"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "cronograma_dep_depende_fkey"
+            columns: ["depende_de"]
+            referencedRelation: "cronograma_itens"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
     }
     Views: {
       [_ in never]: never
