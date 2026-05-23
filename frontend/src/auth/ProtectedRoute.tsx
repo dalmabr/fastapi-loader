@@ -8,10 +8,11 @@ type UserRole = Exclude<Role, null>;
 interface Props {
   children: ReactNode;
   roles?: UserRole[];
+  recurso?: string;
 }
 
-export default function ProtectedRoute({ children, roles }: Props) {
-  const { session, loading, role } = useAuth();
+export default function ProtectedRoute({ children, roles, recurso }: Props) {
+  const { session, loading, role, permissions } = useAuth();
 
   if (loading) {
     return (
@@ -26,7 +27,11 @@ export default function ProtectedRoute({ children, roles }: Props) {
 
   if (!session) return <Navigate to="/login" replace />;
 
-  if (roles && role === null) {
+  // Admin tem acesso total a tudo
+  if (role === 'admin') return <>{children}</>;
+
+  // Aguarda carregamento do perfil + permissões
+  if (role === null) {
     return (
       <div className="h-screen flex items-center justify-center bg-white">
         <svg className="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3C2E26" strokeWidth="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
@@ -34,7 +39,14 @@ export default function ProtectedRoute({ children, roles }: Props) {
     );
   }
 
-  if (roles && role && !roles.includes(role as UserRole)) {
+  // Verificação dinâmica por recurso
+  if (recurso !== undefined) {
+    if (!permissions[recurso]?.pode_ver) return <Navigate to="/" replace />;
+    return <>{children}</>;
+  }
+
+  // Verificação legada por array de roles
+  if (roles && !roles.includes(role as UserRole)) {
     return <Navigate to="/" replace />;
   }
 

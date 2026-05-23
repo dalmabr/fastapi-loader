@@ -52,6 +52,7 @@ const NAV_GROUPS: NavGroup[] = [
     label: 'Projetos',
     items: [
       { label: 'Todos os Projetos', to: '/projetos', roles: ['admin', 'dev', 'negocios'] },
+      { label: 'Etapas', to: '/projetos/etapas', roles: ['admin', 'dev', 'negocios'] },
       { label: 'Em Andamento', to: '/projetos/em-andamento', roles: ['admin', 'dev', 'negocios'] },
       { label: 'Controle de Prazos', to: '/projetos/prazos', roles: ['admin', 'dev', 'negocios'] },
       { label: 'Cronogramas', to: '/projetos/cronogramas', roles: ['admin', 'dev', 'negocios'] },
@@ -62,6 +63,7 @@ const NAV_GROUPS: NavGroup[] = [
     items: [
       { label: 'Configurações', to: '/configuracoes', roles: ['admin', 'operator'] },
       { label: 'Usuários', to: '/usuarios', roles: ['admin'] },
+      { label: 'Permissões', to: '/permissoes', roles: ['admin'] },
     ],
   },
 ];

@@ -17,7 +17,7 @@ export interface Database {
         Row: {
           id: string
           email: string
-          role: 'admin' | 'operator'
+          role: 'admin' | 'operator' | 'dev' | 'negocios'
           ativo: boolean
           created_at: string
           user_code: string | null
@@ -25,7 +25,7 @@ export interface Database {
         Insert: {
           id: string
           email: string
-          role?: 'admin' | 'operator'
+          role?: 'admin' | 'operator' | 'dev' | 'negocios'
           ativo?: boolean
           created_at?: string
           user_code?: string | null
@@ -33,9 +33,39 @@ export interface Database {
         Update: {
           id?: string
           email?: string
-          role?: 'admin' | 'operator'
+          role?: 'admin' | 'operator' | 'dev' | 'negocios'
           ativo?: boolean
           user_code?: string | null
+        }
+        Relationships: []
+      }
+      permissoes: {
+        Row: {
+          id: string
+          role: string
+          recurso: string
+          pode_ver: boolean
+          pode_criar: boolean
+          pode_editar: boolean
+          pode_excluir: boolean
+        }
+        Insert: {
+          id?: string
+          role: string
+          recurso: string
+          pode_ver?: boolean
+          pode_criar?: boolean
+          pode_editar?: boolean
+          pode_excluir?: boolean
+        }
+        Update: {
+          id?: string
+          role?: string
+          recurso?: string
+          pode_ver?: boolean
+          pode_criar?: boolean
+          pode_editar?: boolean
+          pode_excluir?: boolean
         }
         Relationships: []
       }
@@ -183,6 +213,18 @@ export interface Database {
           data_apresentacao: string | null
           sprint: string | null
           created_at: string
+          fase_preparado: string | null
+          fase_requisitos: string | null
+          fase_estruturar: string | null
+          fase_impedimento: string | null
+          fase_codificar: string | null
+          fase_executar: string | null
+          fase_apresentacao: string | null
+          fase_pronto: string | null
+          fase_aceite: string | null
+          fase_esteira: string | null
+          fase_producao: string | null
+          fase_sprint: string | null
         }
         Insert: {
           id?: string
@@ -193,6 +235,18 @@ export interface Database {
           data_apresentacao?: string | null
           sprint?: string | null
           created_at?: string
+          fase_preparado?: string | null
+          fase_requisitos?: string | null
+          fase_estruturar?: string | null
+          fase_impedimento?: string | null
+          fase_codificar?: string | null
+          fase_executar?: string | null
+          fase_apresentacao?: string | null
+          fase_pronto?: string | null
+          fase_aceite?: string | null
+          fase_esteira?: string | null
+          fase_producao?: string | null
+          fase_sprint?: string | null
         }
         Update: {
           id?: string
@@ -202,6 +256,18 @@ export interface Database {
           responsavel?: string | null
           data_apresentacao?: string | null
           sprint?: string | null
+          fase_preparado?: string | null
+          fase_requisitos?: string | null
+          fase_estruturar?: string | null
+          fase_impedimento?: string | null
+          fase_codificar?: string | null
+          fase_executar?: string | null
+          fase_apresentacao?: string | null
+          fase_pronto?: string | null
+          fase_aceite?: string | null
+          fase_esteira?: string | null
+          fase_producao?: string | null
+          fase_sprint?: string | null
         }
         Relationships: [
           {

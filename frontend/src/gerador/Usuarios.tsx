@@ -84,10 +84,10 @@ export default function Usuarios() {
     try {
       const { error } = await supabase
         .from('profiles')
-        .update({ role: novoRole, user_code: novoUserCode.toUpperCase().slice(0, 8) || null })
+        .update({ role: novoRole, user_code: novoUserCode.trim() || null })
         .eq('id', userId);
       if (error) throw error;
-      setProfiles(prev => prev.map(p => p.id === userId ? { ...p, role: novoRole, user_code: novoUserCode.toUpperCase().slice(0, 8) || null } : p));
+      setProfiles(prev => prev.map(p => p.id === userId ? { ...p, role: novoRole, user_code: novoUserCode.trim() || null } : p));
       setEditandoId(null);
       mostrarToast('Perfil atualizado!');
     } catch (err: any) {
@@ -191,7 +191,7 @@ export default function Usuarios() {
             <thead>
               <tr className="bg-[#3C2E26] text-white h-10">
                 <th className="text-left px-4 text-xs font-semibold uppercase tracking-wider w-[35%]">E-mail</th>
-                <th className="text-left px-4 text-xs font-semibold uppercase tracking-wider w-[15%]">Código</th>
+                <th className="text-left px-4 text-xs font-semibold uppercase tracking-wider w-[15%]">Nome</th>
                 <th className="text-left px-4 text-xs font-semibold uppercase tracking-wider w-[15%]">Perfil</th>
                 <th className="text-left px-4 text-xs font-semibold uppercase tracking-wider w-[15%]">Status</th>
                 <th className="text-center px-4 text-xs font-semibold uppercase tracking-wider w-[20%]">Ações</th>
@@ -218,13 +218,13 @@ export default function Usuarios() {
                       {editandoId === p.id ? (
                         <input
                           value={editandoUserCode}
-                          onChange={e => setEditandoUserCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8))}
-                          maxLength={8}
-                          placeholder="8 chars"
-                          className="w-24 h-7 px-2 text-xs font-mono text-[#3C2E26] bg-white border border-[#C4A484] rounded outline-none uppercase"
+                          onChange={e => setEditandoUserCode(e.target.value)}
+                          maxLength={40}
+                          placeholder="Nome"
+                          className="w-36 h-7 px-2 text-xs text-[#3C2E26] bg-white border border-[#C4A484] rounded outline-none"
                         />
                       ) : (
-                        <span className="text-xs font-mono text-[#6B5744]">{p.user_code ?? '—'}</span>
+                        <span className="text-xs text-[#6B5744]">{p.user_code ?? '—'}</span>
                       )}
                     </td>
                     <td className="px-4">

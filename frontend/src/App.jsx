@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthContext';
 import ProtectedRoute from './auth/ProtectedRoute';
-import Navbar from './components/Navbar';
+import Layout from './components/Layout';
 import LoginPage from './auth/LoginPage';
 import GerarMainframe from './gerador/GerarMainframe';
 import Configuracoes from './gerador/Configuracoes';
@@ -18,15 +18,18 @@ import Projetos from './projetos/Projetos';
 import EmAndamento from './projetos/EmAndamento';
 import ControlePrazos from './projetos/ControlePrazos';
 import Cronogramas from './projetos/Cronogramas';
+import EtapasProjetos from './projetos/EtapasProjetos';
+import Permissoes from './gerador/Permissoes';
+import Home from './Home';
 
 function AppRoutes() {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
 
-        <Route path="/" element={<ProtectedRoute roles={['admin', 'operator']}><GerarMainframe /></ProtectedRoute>} />
+        <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+        <Route path="/gerar" element={<ProtectedRoute roles={['admin', 'operator']}><GerarMainframe /></ProtectedRoute>} />
         <Route path="/historico" element={<ProtectedRoute roles={['admin', 'operator']}><ListarArquivos /></ProtectedRoute>} />
         <Route path="/configuracoes" element={<ProtectedRoute roles={['admin', 'operator']}><Configuracoes /></ProtectedRoute>} />
         <Route path="/usuarios" element={<ProtectedRoute roles={['admin']}><Usuarios /></ProtectedRoute>} />
@@ -45,8 +48,11 @@ function AppRoutes() {
         <Route path="/projetos/em-andamento" element={<ProtectedRoute roles={['admin', 'dev', 'negocios']}><EmAndamento /></ProtectedRoute>} />
         <Route path="/projetos/prazos" element={<ProtectedRoute roles={['admin', 'dev', 'negocios']}><ControlePrazos /></ProtectedRoute>} />
         <Route path="/projetos/cronogramas" element={<ProtectedRoute roles={['admin', 'dev', 'negocios']}><Cronogramas /></ProtectedRoute>} />
+        <Route path="/projetos/etapas" element={<ProtectedRoute recurso="projetos"><EtapasProjetos /></ProtectedRoute>} />
+
+        <Route path="/permissoes" element={<ProtectedRoute roles={['admin']}><Permissoes /></ProtectedRoute>} />
       </Routes>
-    </>
+    </Layout>
   );
 }
 
