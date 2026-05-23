@@ -95,7 +95,7 @@ export default function Permissoes() {
     if (existente) {
       const { error } = await supabase
         .from('permissoes')
-        .update({ [campo]: novoValor })
+        .update({ [campo]: novoValor } as Record<string, boolean>)
         .eq('id', existente.id)
 
       if (error) {

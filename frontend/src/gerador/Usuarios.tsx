@@ -1,10 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
 
+type ProfileRole = 'admin' | 'operator' | 'dev' | 'negocios'
+
 interface Profile {
   id: string;
   email: string;
-  role: 'admin' | 'operator';
+  role: ProfileRole;
   ativo: boolean;
   created_at: string;
   user_code: string | null;
@@ -21,11 +23,11 @@ export default function Usuarios() {
   const [carregando, setCarregando] = useState(true);
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [editandoId, setEditandoId] = useState<string | null>(null);
-  const [editandoRole, setEditandoRole] = useState<'admin' | 'operator'>('operator');
+  const [editandoRole, setEditandoRole] = useState<ProfileRole>('operator');
   const [editandoUserCode, setEditandoUserCode] = useState('');
   const [novoEmail, setNovoEmail] = useState('');
   const [novoSenha, setNovoSenha] = useState('');
-  const [novoRole, setNovoRole] = useState<'admin' | 'operator'>('operator');
+  const [novoRole, setNovoRole] = useState<ProfileRole>('operator');
   const [criando, setCriando] = useState(false);
 
   const mostrarToast = useCallback((mensagem: string, tipo: Toast['tipo'] = 'sucesso') => {
@@ -80,7 +82,7 @@ export default function Usuarios() {
     }
   }
 
-  async function atualizarPerfil(userId: string, novoRole: 'admin' | 'operator', novoUserCode: string) {
+  async function atualizarPerfil(userId: string, novoRole: ProfileRole, novoUserCode: string) {
     try {
       const { error } = await supabase
         .from('profiles')
@@ -157,11 +159,13 @@ export default function Usuarios() {
               <label className="text-xs font-medium text-[#3C2E26] block mb-1">Perfil</label>
               <select
                 value={novoRole}
-                onChange={e => setNovoRole(e.target.value as 'admin' | 'operator')}
+                onChange={e => setNovoRole(e.target.value as ProfileRole)}
                 className="h-9 px-3 text-sm text-[#3C2E26] bg-white border border-[#D4D4CE] rounded-lg outline-none appearance-none cursor-pointer focus:border-[#C4A484]"
                 style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2710%27 height=%2710%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23666%27 stroke-width=%272%27%3E%3Cpath d=%27m6 9 6 6 6-6%27/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 6px center', paddingRight: '20px' }}
               >
                 <option value="operator">Operador</option>
+                <option value="dev">Dev</option>
+                <option value="negocios">Negócios</option>
                 <option value="admin">Admin</option>
               </select>
             </div>
@@ -231,11 +235,13 @@ export default function Usuarios() {
                       {editandoId === p.id ? (
                         <select
                           value={editandoRole}
-                          onChange={e => setEditandoRole(e.target.value as 'admin' | 'operator')}
+                          onChange={e => setEditandoRole(e.target.value as ProfileRole)}
                           className="h-7 px-2 text-xs text-[#3C2E26] bg-white border border-[#C4A484] rounded outline-none appearance-none cursor-pointer"
                           style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%278%27 height=%278%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23666%27 stroke-width=%272%27%3E%3Cpath d=%27m6 9 6 6 6-6%27/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 4px center', paddingRight: '16px' }}
                         >
                           <option value="operator">Operador</option>
+                          <option value="dev">Dev</option>
+                          <option value="negocios">Negócios</option>
                           <option value="admin">Admin</option>
                         </select>
                       ) : (
