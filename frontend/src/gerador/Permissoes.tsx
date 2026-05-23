@@ -95,7 +95,8 @@ export default function Permissoes() {
     if (existente) {
       const { error } = await supabase
         .from('permissoes')
-        .update({ [campo]: novoValor } as Record<string, boolean>)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .update({ [campo]: novoValor } as any)
         .eq('id', existente.id)
 
       if (error) {
