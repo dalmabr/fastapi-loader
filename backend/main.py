@@ -9,6 +9,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from formato import format_field
 from layout.parser import parse_cobol_layout
 
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from api.routes import router as iso_router
+import json
+
 
 app = FastAPI()
 
@@ -139,3 +144,8 @@ def generate(model: str, records: List[Dict]):
         lines.append(line)
 
     return {"preview": "\n".join(lines)}
+
+class TransactionRequest(BaseModel):
+    hex_message: str
+
+app.include_router(iso_router, prefix="/api/iso8583")
